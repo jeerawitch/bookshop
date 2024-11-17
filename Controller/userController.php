@@ -123,6 +123,16 @@ class User{
 
             $orderid = $this->db->lastInsertId();
 
+            //Orderitem
+            $quantity = 1;
+
+            $sqlOrderitem = "INSERT INTO orderitem (OrderID, BookID, Quantity, Price) VALUES (?, ?, ?, ?)";
+            $stmtOrderitem = $this->db->prepare($sqlOrderitem);
+            $stmtOrderitem->bindParam(1, $orderid, PDO::PARAM_INT);
+            // $stmtOrderitem->bindParam(2, $bookid, PDO::PARAM_INT);
+            $stmtOrderitem->bindParam(3, $quantity, PDO::PARAM_INT);
+            $stmtOrderitem->bindParam(4, $price, PDO::PARAM_INT);
+
             //Payment
             $paymentstatus = "Pending";
 

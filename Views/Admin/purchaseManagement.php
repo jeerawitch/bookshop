@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../../Model/connect.php";
 
-$result = $admin->getAllOrder();
+$result = $admin->getAllPurchase();
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ $result = $admin->getAllOrder();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrderManagement</title>
+    <title>PurchaseManagement</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -55,9 +55,10 @@ $result = $admin->getAllOrder();
         <thead>
             <tr>
                 <th>OrderID</th>
-                <th>BookID</th>
-                <th>Quantity</th>
-                <th>Price</th>
+                <th>OrderDate</th>
+                <th>TotalAmount</th>
+                <th>OrderStatus</th>
+                <th>ShippingMethod</th>
                 <th>Manage</th>
             </tr>
         </thead>
@@ -65,9 +66,10 @@ $result = $admin->getAllOrder();
             <?php while($row = $result->fetch(PDO::FETCH_ASSOC)){ ?>
                 <tr>
                     <td class="text-center"><?php echo $row["OrderID"] ?></td>
-                    <td class="text-center"><?php echo $row["BookID"] ?></td>
-                    <td class="text-center"><?php echo $row["Quantity"] ?></td>
-                    <td class="text-center"><?php echo $row["Price"] ?></td>
+                    <td class="text-center"><?php echo $row["OrderDate"] ?></td>
+                    <td class="text-center"><?php echo $row["TotalAmount"] ?></td>
+                    <td class="text-center"><?php echo $row["OrderStatus"] ?></td>
+                    <td class="text-center"><?php echo $row["PaymentStatus"] ?></td>
                     <td class="text-center">
                         <div class="flex justify-center space-x-2">
                             <a href="#" class="bg-blue-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Edit</a>

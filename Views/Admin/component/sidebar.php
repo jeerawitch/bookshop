@@ -25,6 +25,9 @@
         <a href="./orderManagement.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
             <span class="material-icons">assessment</span> <span class="ml-2">Order</span>
         </a>
+        <a href="./purchaseManagement.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
+            <span class="material-icons">assessment</span> <span class="ml-2">Purchase</span>
+        </a>
         <a href="./paymentManagement.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
             <span class="material-icons">assessment</span> <span class="ml-2">Payment</span>
         </a>
@@ -46,6 +49,9 @@
         </a>
         <a href="./orderManagement.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
             <span class="material-icons">assessment</span> <span class="ml-2">Order</span>
+        </a>
+        <a href="./purchaseManagement.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
+            <span class="material-icons">assessment</span> <span class="ml-2">Purchase</span>
         </a>
         <a href="./paymentManagement.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
             <span class="material-icons">assessment</span> <span class="ml-2">Payment</span>

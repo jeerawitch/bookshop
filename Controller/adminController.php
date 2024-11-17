@@ -72,9 +72,20 @@ class Admin{
         }
     }
 
-    function getAllOrder(){
+    function getAllPurchase(){
         try{
             $sql = "SELECT * FROM purchaseorder";
+            $result = $this->db->query($sql);
+            return $result;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    function getAllOrder(){
+        try{
+            $sql = "SELECT * FROM orderitem";
             $result = $this->db->query($sql);
             return $result;
         }catch(PDOException $e){
