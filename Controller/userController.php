@@ -105,7 +105,7 @@ class User{
         }
     }
 
-    function insertOrder($userid, $date, $price, $payment, $shipping){
+    function insertOrder($userid, $date, $price, $payment, $shipping, $bookid){
         try{
 
             $orderstatus = "Pending";
@@ -129,9 +129,10 @@ class User{
             $sqlOrderitem = "INSERT INTO orderitem (OrderID, BookID, Quantity, Price) VALUES (?, ?, ?, ?)";
             $stmtOrderitem = $this->db->prepare($sqlOrderitem);
             $stmtOrderitem->bindParam(1, $orderid, PDO::PARAM_INT);
-            // $stmtOrderitem->bindParam(2, $bookid, PDO::PARAM_INT);
+            $stmtOrderitem->bindParam(2, $bookid, PDO::PARAM_INT);
             $stmtOrderitem->bindParam(3, $quantity, PDO::PARAM_INT);
             $stmtOrderitem->bindParam(4, $price, PDO::PARAM_INT);
+            $stmtOrderitem->execute();
 
             //Payment
             $paymentstatus = "Pending";

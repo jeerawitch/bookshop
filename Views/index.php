@@ -120,5 +120,24 @@ require_once __DIR__ . "/component/session.php";
     <?php
         include("./component/footer.php")
     ?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        // Toggle menu visibility
+        menuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking the close button
+        closeMenu.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>
+
 </body>
 </html>

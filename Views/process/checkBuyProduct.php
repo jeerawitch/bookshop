@@ -9,14 +9,16 @@ if(isset($_POST["submit"])){
     $price = $_POST["price"];
     $payment = $_POST["payment"];
     $shipping = $_POST["shipping"];
+    $bookid = $_POST["product_id"];
 
     // echo $userid."<br>";
     // echo $date."<br>";
     // echo $price."<br>";
     // echo $payment."<br>";
     // echo $shipping."<br>";
+    // echo $bookid."<br>";
 
-    $result = $user->insertOrder($userid, $date, $price, $payment, $shipping);
+    $result = $user->insertOrder($userid, $date, $price, $payment, $shipping, $bookid);
 
     if($result){
         ?>
@@ -26,7 +28,7 @@ if(isset($_POST["submit"])){
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Login failed</title>
+            <title>Order completed</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         </head>
@@ -38,7 +40,7 @@ if(isset($_POST["submit"])){
                             <h5 class="modal-title">Success</h5>
                         </div>
                         <div class="modal-body">
-                            <p>Order Success</p>
+                            <p>Order completed</p>
                         </div>
                         <div class="modal-footer">
                             <a href="../product.php" class="btn btn-primary">Back</a>
