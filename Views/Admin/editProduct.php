@@ -33,45 +33,45 @@ if(isset($_POST["submit"])){
       </div>
 
       <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form class="space-y-6" action="./process/checkEditCustomer.php" method="POST">
+        <form class="space-y-6" action="./adminProcess/checkEditProduct.php" method="POST">
 
             <div>
                 <label for="Email" class="block text-sm/6 font-medium text-gray-900">ImageURL</label>
                 <div class="mt-2">
-                <input type="text" name="email" value="<?php echo htmlspecialchars($result['ImageURL']); ?>" class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
+                <input type="text" name="imageurl" value="<?php echo htmlspecialchars($result['ImageURL']); ?>" class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                 </div>
             </div>
 
             <div>
                 <label for="Phone" class="block text-sm/6 font-medium text-gray-900">Title</label>
                 <div class="mt-2">
-                <input type="text" name="phone" value="<?php echo htmlspecialchars($result['Title']); ?>" class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
+                <input type="text" name="title" value="<?php echo htmlspecialchars($result['Title']); ?>" class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                 </div>
             </div>
 
             <div>
                 <label for="Address" class="block text-sm/6 font-medium text-gray-900">Author</label>
                 <div class="mt-2">
-                <input type="text" name="address" value="<?php echo htmlspecialchars($result['Author']); ?>" class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
+                <input type="text" name="author" value="<?php echo htmlspecialchars($result['Author']); ?>" class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                 </div>
             </div>
 
             <div>
                 <label for="Address" class="block text-sm/6 font-medium text-gray-900">Publisher</label>
                 <div class="mt-2">
-                <input type="text" name="address" value="<?php echo htmlspecialchars($result['Publisher']); ?>" class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
+                <input type="text" name="publisher" value="<?php echo htmlspecialchars($result['Publisher']); ?>" class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                 </div>
             </div>
 
             <div>
                 <label for="Address" class="block text-sm/6 font-medium text-gray-900">Price</label>
                 <div class="mt-2">
-                <input type="text" name="address" value="<?php echo htmlspecialchars($result['Price']); ?>" class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
+                <input type="text" name="price" value="<?php echo htmlspecialchars($result['Price']); ?>" class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
                 </div>
             </div>
 
             <div>
-                <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['BookID']) ?>">
+                <input type="hidden" name="product_id" value="<?= $bookid ?>">
                 <button type="submit" name="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 px-1.5 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
             </div>
         </form>

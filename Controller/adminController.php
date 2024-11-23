@@ -104,6 +104,25 @@ class Admin{
             return false;
         }
     }
+
+    function updateProduct($bookid,$imageurl, $title, $author, $publisher, $price){
+        try{
+            // $userid = 12;
+
+            $sql = "UPDATE book SET Title = ?, Author = ?, Publisher = ?, Price = ?, ImageURL = ? WHERE BookID = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $title, PDO::PARAM_STR);
+            $stmt->bindParam(2, $author, PDO::PARAM_STR);
+            $stmt->bindParam(3, $publisher, PDO::PARAM_STR);
+            $stmt->bindParam(4, $price, PDO::PARAM_STR);
+            // $stmt->bindParam(5, $userid, PDO::PARAM_STR);
+            // $stmt-> execute();
+            // return true;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
 }
 
 ?>
