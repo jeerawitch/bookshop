@@ -71,8 +71,16 @@ $result = $admin->getAllUser();
                     <td class="text-center"><?php echo $row["Email"] ?></td>
                     <td class="text-center">
                         <div class="flex justify-center space-x-2">
-                            <a href="#" class="bg-blue-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Edit</a>
-                            <a href="#" class="bg-red-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Delete</a>
+                            <form action="./editUser.php" method="POST" >
+                                <input type="hidden" name="customerid" value="<?= htmlspecialchars($row['CustomerID']) ?>">
+                                <button type="submit" name="submit" class="bg-blue-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Edit</button>  
+                            </form>
+                            <form action="./adminProcess/checkDeleteUser.php" method="POST">
+                                <input type="hidden" name="customerid" value="<?= htmlspecialchars($row['CustomerID']) ?>">
+                                <button  onclick="return confirm('Confirm data deletion')" type="submit" name="submit" class="bg-red-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Delete</button>  
+                            </form>
+                            <!-- <a href="#" class="bg-blue-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Edit</a>
+                            <a href="#" class="bg-red-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Delete</a> -->
                         </div>
                     </td>
                 </tr>

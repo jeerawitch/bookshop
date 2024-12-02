@@ -71,8 +71,9 @@ $result = $admin->getProduct();
                                 <button type="submit" name="submit" class="bg-blue-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Edit</button>  
                             </form>
 
-                            <form action="#" method="#">
-                                <button class="bg-red-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Delete</button>
+                            <form action="./adminProcess/checkDeleteProduct.php" method="POST">
+                                <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['BookID']) ?>">
+                                <button  onclick="return confirm('Confirm data deletion')" type="submit" name="submit" class="bg-red-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Delete</button>  
                             </form>
                             
                         </div>
