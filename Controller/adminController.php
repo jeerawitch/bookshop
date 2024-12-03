@@ -136,6 +136,55 @@ class Admin{
         }
     }
 
+    function getOrderByID($orderitemid){
+        try{
+            $sql = "SELECT * FROM orderitem WHERE OrderItemID = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $orderitemid, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    function updateOrder($orderitemid, $quantity, $totalprice){
+        try{
+            $sql = "UPDATE orderitem SET Quantity = ?, Price = ? WHERE OrderItemID = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $quantity, PDO::PARAM_STR);
+            $stmt->bindParam(2, $totalprice, PDO::PARAM_STR);
+            $stmt->bindParam(3, $orderitemid, PDO::PARAM_STR);
+            $stmt-> execute();
+            return true;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    function deleteOrder($orderitemid){
+        try{
+            $sqlorder = "DELETE FROM orderitem WHERE OrderItemID = ?";
+            $stmtorder = $this->db->prepare($sql);
+            $stmtorder->bindParam(1, $orderitemid, PDO::PARAM_INT);
+            $stmtorder->execute();
+
+            $sqlpurchase = "DELETE FROM purchaseorder WHERE OrderID = ?";
+            $stmtpurchase = $this->db->prepare($sql);
+            $stmtpurchase->bindParam(1, $orderitemid, PDO::PARAM_INT);
+            $stmtpurchase->execute();
+
+            
+            return true;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
 }
 
 ?>

@@ -105,6 +105,19 @@ class User{
         }
     }
 
+    function deleteCustomer($customerid){
+        try{
+            $sql = "DELETE FROM customer WHERE CustomerID = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $customerid, PDO::PARAM_INT);
+            $stmt->execute();
+            return true;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
     function insertOrder($userid, $date, $price, $payment, $shipping, $bookid){
         try{
 

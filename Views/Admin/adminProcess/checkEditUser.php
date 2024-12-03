@@ -3,25 +3,23 @@
 require_once __DIR__ . "/../../../Model/connect.php";
 
 if(isset($_POST["submit"])){
-    $bookid = $_POST["product_id"];
-    $imageurl = $_POST["imageurl"];
-    $title = $_POST["title"];
-    $author = $_POST["author"];
-    $publisher = $_POST["publisher"];
-    $price = $_POST["price"];
+    $customerid = $_POST["customerid"];
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $address = $_POST["address"];
 
-    $status = $admin->updateProduct($bookid, $imageurl, $title, $author, $publisher, $price);
-
+    $status = $user->updateCustomer($name, $address, $phone, $email, $customerid);
+    
     if($status){
-        header("Location:../productManagement.php");
+        header("Location:../userManagement.php");
     }
 
-    // echo $bookid."<br>";
-    // echo $imageurl."<br>";
-    // echo $title."<br>";
-    // echo $author."<br>";
-    // echo $publisher."<br>";
-    // echo $price."<br>";
+    // echo $customerid."<br>";
+    // echo $name."<br>";
+    // echo $email."<br>";
+    // echo $phone."<br>";
+    // echo $address."<br>";
 }
 
 ?>
