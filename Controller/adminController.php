@@ -158,6 +158,18 @@ class Admin{
             $stmt->bindParam(2, $totalprice, PDO::PARAM_STR);
             $stmt->bindParam(3, $orderitemid, PDO::PARAM_STR);
             $stmt-> execute();
+
+            $sqlpurchase = "UPDATE purchaseorder SET TotalAmount = ? WHERE OrderID = ?";
+            $stmtpurchase = $this->db->prepare($sqlpurchase);
+            $stmtpurchase->bindParam(1, $totalprice, PDO::PARAM_INT);
+            $stmtpurchase->bindParam(2, $orderitemid, PDO::PARAM_INT);
+            $stmtpurchase-> execute();
+
+            $sqlpayment = "UPDATE payment SET PaymentAmount = ? WHERE PaymentID = ?";
+            $stmtpayment = $this->db->prepare($sqlpayment);
+            $stmtpayment->bindParam(1, $totalprice, PDO::PARAM_STR);
+            $stmtpayment->bindParam(2, $orderitemid, PDO::PARAM_STR);
+            $stmtpayment-> execute();
             return true;
         }catch(PDOException $e){
             echo $e->getMessage();
@@ -168,16 +180,24 @@ class Admin{
     function deleteOrder($orderitemid){
         try{
             $sqlorder = "DELETE FROM orderitem WHERE OrderItemID = ?";
-            $stmtorder = $this->db->prepare($sql);
+            $stmtorder = $this->db->prepare($sqlorder);
             $stmtorder->bindParam(1, $orderitemid, PDO::PARAM_INT);
             $stmtorder->execute();
 
+            $sqlpayment = "DELETE FROM payment WHERE PaymentID = ?";
+            $stmtpayment = $this->db->prepare($sqlpayment);
+            $stmtpayment->bindParam(1, $orderitemid, PDO::PARAM_INT);
+            $stmtpayment->execute();
+
+            $sqlshipping = "DELETE FROM shipping WHERE ShippingID = ?";
+            $stmtshipping = $this->db->prepare($sqlshipping);
+            $stmtshipping->bindParam(1, $orderitemid, PDO::PARAM_INT);
+            $stmtshipping->execute();
+
             $sqlpurchase = "DELETE FROM purchaseorder WHERE OrderID = ?";
-            $stmtpurchase = $this->db->prepare($sql);
+            $stmtpurchase = $this->db->prepare($sqlpurchase);
             $stmtpurchase->bindParam(1, $orderitemid, PDO::PARAM_INT);
             $stmtpurchase->execute();
-
-            
             return true;
         }catch(PDOException $e){
             echo $e->getMessage();
