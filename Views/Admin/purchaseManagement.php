@@ -58,7 +58,8 @@ $result = $admin->getAllPurchase();
                 <th>OrderDate</th>
                 <th>TotalAmount</th>
                 <th>OrderStatus</th>
-                <th>ShippingMethod</th>
+                <th>PaymentMethod</th>
+                <th>ShippingtMethod</th>
                 <th>Manage</th>
             </tr>
         </thead>
@@ -70,14 +71,15 @@ $result = $admin->getAllPurchase();
                     <td class="text-center"><?php echo $row["TotalAmount"] ?></td>
                     <td class="text-center"><?php echo $row["OrderStatus"] ?></td>
                     <td class="text-center"><?php echo $row["PaymentStatus"] ?></td>
+                    <td class="text-center"><?php echo $row["ShippingMethod"] ?></td>
                     <td class="text-center">
                         <div class="flex justify-center space-x-2">
-                            <form action="./editOrder.php" method="POST" >
-                                <input type="hidden" name="orderid" value="<?= htmlspecialchars($row['OrderItemID']) ?>">
+                            <form action="./editPurchase.php" method="POST" >
+                                <input type="hidden" name="orderid" value="<?= htmlspecialchars($row['OrderID']) ?>">
                                 <button type="submit" name="submit" class="bg-blue-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Edit</button>  
                             </form>
-                            <form action="./adminProcess/checkDeleteOrder.php" method="POST">
-                                <input type="hidden" name="orderitemid" value="<?= htmlspecialchars($row['OrderItemID']) ?>">
+                            <form action="./adminProcess/checkDeletePurchase.php" method="POST">
+                                <input type="hidden" name="orderid" value="<?= htmlspecialchars($row['OrderID']) ?>">
                                 <button  onclick="return confirm('Confirm data deletion')" type="submit" name="submit" class="bg-red-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Delete</button>  
                             </form>
                         </div>

@@ -11,7 +11,7 @@ if(isset($_POST["submit"])){
         header("Location:../orderManagement.php");
     }
 
-    echo $orderitemid."<br>";
+    // echo $orderitemid."<br>";
 }
 
 ?>

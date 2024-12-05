@@ -72,8 +72,14 @@ $result = $admin->getAllPayment();
                     <td class="text-center"><?php echo $row["PaymentStatus"] ?></td>
                     <td class="text-center">
                         <div class="flex justify-center space-x-2">
-                            <a href="#" class="bg-blue-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Edit</a>
-                            <a href="#" class="bg-red-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Delete</a>
+                            <form action="./editPayment.php" method="POST" >
+                                <input type="hidden" name="paymentid" value="<?= htmlspecialchars($row['PaymentID']) ?>">
+                                <button type="submit" name="submit" class="bg-blue-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Edit</button>  
+                            </form>
+                            <form action="./adminProcess/checkDeletePayment.php" method="POST">
+                                <input type="hidden" name="paymentid" value="<?= htmlspecialchars($row['PaymentID']) ?>">
+                                <button  onclick="return confirm('Confirm data deletion')" type="submit" name="submit" class="bg-red-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Delete</button>  
+                            </form>
                         </div>
                     </td>
                 </tr>

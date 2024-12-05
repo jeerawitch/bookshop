@@ -205,6 +205,69 @@ class Admin{
         }
     }
 
+    function getPurchaseByID($orderid){
+        try{
+            $sql = "SELECT * FROM purchaseorder WHERE OrderID = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $orderid, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    function updatePurchase($orderid,$purchasestatus){
+        try{
+            $sql = "UPDATE purchaseorder SET OrderStatus = ? WHERE OrderID = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $purchasestatus, PDO::PARAM_STR);
+            $stmt->bindParam(2, $orderid, PDO::PARAM_STR);
+            $stmt-> execute();
+            return true;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    function getPaymentByID($paymentid){
+        try{
+            $sql = "SELECT * FROM payment WHERE PaymentID = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $paymentid, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    function updatePayment($paymentid, $paymentmethod, $paymentstatus){
+        try{
+            $sql = "UPDATE payment SET PaymentMethod = ?, PaymentStatus = ? WHERE PaymentID = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $paymentmethod, PDO::PARAM_STR);
+            $stmt->bindParam(2, $paymentstatus, PDO::PARAM_STR);
+            $stmt->bindParam(3, $paymentid, PDO::PARAM_STR);
+            $stmt-> execute();
+
+            $sqlpurchase = "UPDATE purchaseorder SET PaymentStatus = ? WHERE OrderID = ?";
+            $stmtpurchase = $this->db->prepare($sqlpurchase);
+            $stmtpurchase->bindParam(1, $paymentmethod, PDO::PARAM_STR);
+            $stmtpurchase->bindParam(2, $paymentid, PDO::PARAM_STR);
+            $stmtpurchase-> execute();
+            return true;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
 }
 
 ?>
