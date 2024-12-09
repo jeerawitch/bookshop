@@ -37,7 +37,7 @@ $result = $admin->getAllPurchase();
                 <button class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
                     <span class="material-icons">mail</span>
                 </button>
-                <span class="font-medium">John Doe</span>
+                <span class="font-medium">Admin</span>
             </div>
         </header>
 
@@ -45,7 +45,7 @@ $result = $admin->getAllPurchase();
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h2>Order Management System</h2>
+                    <h2>Purchase Management System</h2>
                 </div>
             </div>
         </div>

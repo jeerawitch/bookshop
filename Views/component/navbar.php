@@ -88,13 +88,10 @@
                         <a href="./register.php" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
                     </div>
 
-                    <!-- Search -->
+                    <!-- Admin -->
                     <div class="flex lg:ml-6">
-                        <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
-                            <span class="sr-only">Search</span>
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                            </svg>
+                        <a href="./Admin/dashboard.php" class="p-2 ">
+                            <span class="flex w-full justify-center rounded-md bg-purple-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Admin</span>
                         </a>
                     </div>
 
@@ -116,7 +113,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden absolute top-0 left-0 w-full bg-white shadow-md z-50">
+    <div id="mobileMenu" class="hidden absolute top-0 left-0 w-full h-screen bg-white shadow-md z-50">
         <div class="p-4">
             <button id="closeMenu" type="button" class="mb-4 text-gray-400 hover:text-gray-500">
                 <span class="sr-only">Close menu</span>
@@ -126,9 +123,28 @@
             </button>
             <a href="./index.php" class="block text-gray-700 hover:text-gray-800 text-sm font-medium">Home</a>
             <a href="./product.php" class="block mt-2 text-gray-700 hover:text-gray-800 text-sm font-medium">Product</a>
+            <hr class="mt-4">
             <a href="./login.php" class="block mt-2 text-gray-700 hover:text-gray-800 text-sm font-medium">Sign in</a>
             <a href="./register.php" class="block mt-2 text-gray-700 hover:text-gray-800 text-sm font-medium">Create account</a>
         </div>
     </div>
 </header>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        // Toggle menu visibility
+        menuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking the close button
+        closeMenu.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>

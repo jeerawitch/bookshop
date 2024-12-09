@@ -27,7 +27,7 @@
                 <button class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
                     <span class="material-icons">mail</span>
                 </button>
-                <span class="font-medium">John Doe</span>
+                <span class="font-medium">Admin</span>
             </div>
         </header>
 
@@ -63,8 +63,8 @@
             <div class="col-span-2 p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
                 <h3 class="text-lg font-semibold text-gray-700 mb-4">Site Visits</h3>
                 <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <!-- Embed your map or image placeholder here -->
-                    <span class="text-gray-500">Map Placeholder</span>
+                    <iframe class="w-full h-64" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4199.605367809995!2d100.58411927538435!3d13.964255892338642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sth!2sth!4v1733754307140!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- <span class="text-gray-500">Map Placeholder</span> -->
                 </div>
             </div>
 
@@ -73,7 +73,7 @@
                 <h3 class="text-lg font-semibold text-gray-700 mb-4">Visitor Stats</h3>
                 <div class="space-y-4">
                     <div>
-                        <p class="text-sm">100k Visitors From USA</p>
+                        <p class="text-sm">150 Visitors From Nonthaburi</p>
                         <div class="relative pt-1">
                             <div class="overflow-hidden h-2 text-xs flex rounded bg-gray-200">
                                 <div style="width:50%" class="bg-purple-500 rounded h-2"></div>
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <div>
-                        <p class="text-sm">1M Visitors From Europe</p>
+                        <p class="text-sm">170 Visitors From Pathum Thani</p>
                         <div class="relative pt-1">
                             <div class="overflow-hidden h-2 text-xs flex rounded bg-gray-200">
                                 <div style="width:80%" class="bg-green-500 rounded h-2"></div>
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                     <div>
-                        <p class="text-sm">450k Visitors From Australia</p>
+                        <p class="text-sm">140 Visitors From Nakhon Nayok</p>
                         <div class="relative pt-1">
                             <div class="overflow-hidden h-2 text-xs flex rounded bg-gray-200">
                                 <div style="width:40%" class="bg-blue-500 rounded h-2"></div>
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <div>
-                        <p class="text-sm">1B Visitors From India</p>
+                        <p class="text-sm">180 Visitors From Bangkok</p>
                         <div class="relative pt-1">
                             <div class="overflow-hidden h-2 text-xs flex rounded bg-gray-200">
                                 <div style="width:90%" class="bg-gray-700 rounded h-2"></div>

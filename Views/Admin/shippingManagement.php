@@ -37,7 +37,7 @@ $result = $admin->getAllShipping();
                 <button class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
                     <span class="material-icons">mail</span>
                 </button>
-                <span class="font-medium">John Doe</span>
+                <span class="font-medium">Admin</span>
             </div>
         </header>
 
@@ -45,7 +45,7 @@ $result = $admin->getAllShipping();
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h2>Data Management System</h2>
+                    <h2>Shipping Management System</h2>
                 </div>
             </div>
         </div>
@@ -70,8 +70,14 @@ $result = $admin->getAllShipping();
                     <td class="text-center"><?php echo $row["TrackingNumber"] ?></td>
                     <td class="text-center">
                         <div class="flex justify-center space-x-2">
-                            <a href="#" class="bg-blue-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Edit</a>
-                            <a href="#" class="bg-red-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Delete</a>
+                        <form action="./editShipping.php" method="POST" >
+                                <input type="hidden" name="shippingid" value="<?= htmlspecialchars($row['ShippingID']) ?>">
+                                <button type="submit" name="submit" class="bg-blue-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Edit</button>  
+                            </form>
+                            <form action="./adminProcess/checkDeleteShipping.php" method="POST">
+                                <input type="hidden" name="shippingid" value="<?= htmlspecialchars($row['ShippingID']) ?>">
+                                <button  onclick="return confirm('Confirm data deletion')" type="submit" name="submit" class="bg-red-600 text-white font-semibold px-3 py-1 rounded-full shadow-md">Delete</button>  
+                            </form>
                         </div>
                     </td>
                 </tr>

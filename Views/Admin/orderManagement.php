@@ -37,7 +37,7 @@ $result = $admin->getAllOrder();
                 <button class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
                     <span class="material-icons">mail</span>
                 </button>
-                <span class="font-medium">John Doe</span>
+                <span class="font-medium">Admin</span>
             </div>
         </header>
 

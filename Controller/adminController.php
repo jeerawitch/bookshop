@@ -268,6 +268,42 @@ class Admin{
         }
     }
 
+    function getShippingByID($shippingid){
+        try{
+            $sql = "SELECT * FROM shipping WHERE ShippingID = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $shippingid, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    function updateShipping($shippingid, $shippingmethod, $shippingstatus, $trackingnumber){
+        try{
+            $sql = "UPDATE shipping SET ShippingMethod = ?, ShippingStatus = ?, TrackingNumber = ? WHERE ShippingID = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(1, $shippingmethod, PDO::PARAM_STR);
+            $stmt->bindParam(2, $shippingstatus, PDO::PARAM_STR);
+            $stmt->bindParam(3, $trackingnumber, PDO::PARAM_STR);
+            $stmt->bindParam(4, $shippingid, PDO::PARAM_STR);
+            $stmt-> execute();
+
+            $sqlpurchase = "UPDATE purchaseorder SET Shippingmethod = ? WHERE OrderID = ?";
+            $stmtpurchase = $this->db->prepare($sqlpurchase);
+            $stmtpurchase->bindParam(1, $shippingmethod, PDO::PARAM_STR);
+            $stmtpurchase->bindParam(2, $shippingid, PDO::PARAM_STR);
+            $stmtpurchase-> execute();
+            return true;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
 }
 
 ?>
