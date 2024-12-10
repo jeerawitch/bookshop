@@ -90,7 +90,7 @@
 
                     <!-- Admin -->
                     <div class="flex lg:ml-6">
-                        <a href="./Admin/dashboard.php" class="p-2 ">
+                        <a href="./adminLogin.php" class="p-2 ">
                             <span class="flex w-full justify-center rounded-md bg-purple-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Admin</span>
                         </a>
                     </div>

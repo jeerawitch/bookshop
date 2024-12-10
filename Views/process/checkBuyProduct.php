@@ -6,7 +6,9 @@ require_once __DIR__ . "/../component/session.php";
 if(isset($_POST["submit"])){
     $userid = $_SESSION["userid"];
     $date = $_POST["date"];
+    $quantity = $_POST["quantity"];
     $price = $_POST["price"];
+    $totalprice = $quantity * $price;
     $payment = $_POST["payment"];
     $shipping = $_POST["shipping"];
     $bookid = $_POST["product_id"];
@@ -18,7 +20,7 @@ if(isset($_POST["submit"])){
     // echo $shipping."<br>";
     // echo $bookid."<br>";
 
-    $result = $user->insertOrder($userid, $date, $price, $payment, $shipping, $bookid);
+    $result = $user->insertOrder($userid, $date, $quantity, $totalprice, $payment, $shipping, $bookid);
 
     if($result){
         ?>

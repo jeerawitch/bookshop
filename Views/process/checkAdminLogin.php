@@ -9,7 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $user->getUser($username, $new_password);
     $role = $result["Role"];
 
-    if (!$result || $role != "Customer") {
+    // echo $role;
+    
+    if (!$result || $role != "Admin") {
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -31,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <p class="text-black">Incorrect username or password</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="../login.php" class="btn btn-primary">Back</a>
+                            <a href="../adminLogin.php" class="btn btn-primary">Back</a>
                         </div>
                     </div>
                 </div>
@@ -48,8 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </html>
         <?php
     } else {
-        $_SESSION["userid"] = $result["UserID"];
-        header("Location:../index.php");
+        header("Location:../Admin/dashboard.php");
     }
 }
 ?>
