@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/component/session.php";
+require_once __DIR__ . "/Views/component/session.php";
 
 ?>
 
@@ -17,7 +17,7 @@ require_once __DIR__ . "/component/session.php";
 <body>
 
     <?php
-        include("./component/navbar.php");
+        include("./Views/component/navbar.php");
     ?>
 
     <div class="relative overflow-hidden bg-white">
