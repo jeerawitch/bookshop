@@ -62,17 +62,17 @@
 
                 <!-- Logo -->
                 <div class="ml-4 flex lg:ml-0">
-                    <a href="../index.php">
+                    <a href="./index.php">
                         <span class="sr-only">Your Company</span>
-                        <img class="h-10 w-auto" src="../images/books.png" alt="Logo">
+                        <img class="h-10 w-auto" src="./images/books.png" alt="Logo">
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:ml-8 lg:block lg:self-stretch">
                     <div class="flex h-full space-x-8">
-                        <a href="../index.php" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Home</a>
-                        <a href="./product.php" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Product</a>
+                        <a href="./index.php" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Home</a>
+                        <a href="./Views/product.php" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Product</a>
                     </div>
                 </div>
 
@@ -80,17 +80,17 @@
                 <div class="ml-auto flex items-center">
                     <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                         <?php if (isset($_SESSION["userid"])): ?>
-                            <a href="./process/checkLogout.php" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign out</a>
+                            <a href="./Views/process/checkLogout.php" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign out</a>
                         <?php else: ?>
-                            <a href="./login.php" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
+                            <a href="./Views/login.php" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
                         <?php endif; ?>
                         <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-                        <a href="./register.php" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
+                        <a href="./Views/register.php" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
                     </div>
 
                     <!-- Admin -->
                     <div class="flex lg:ml-6">
-                        <a href="./adminLogin.php" class="p-2 ">
+                        <a href="./Views/adminLogin.php" class="p-2 ">
                             <span class="flex w-full justify-center rounded-md bg-purple-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Admin</span>
                         </a>
                     </div>
@@ -98,12 +98,12 @@
                     <!-- User Profile -->
                     <div class="ml-4 flow-root lg:ml-6">
                         <?php if (isset($_SESSION["userid"])): ?>
-                            <a href="./customerForm.php" class="group -m-2 flex items-center p-2">
-                                <img class="h-9 w-auto" src="../images/userLogin.png" alt="User logged in">
+                            <a href="./Views/customerForm.php" class="group -m-2 flex items-center p-2">
+                                <img class="h-9 w-auto" src="./images/userLogin.png" alt="User logged in">
                             </a>
                         <?php else: ?>
-                            <a href="./login.php" class="group -m-2 flex items-center p-2">
-                                <img class="h-9 w-auto" src="../images/userLogout.png" alt="User logged out">
+                            <a href="./Views/login.php" class="group -m-2 flex items-center p-2">
+                                <img class="h-9 w-auto" src="./images/userLogout.png" alt="User logged out">
                             </a>
                         <?php endif; ?>
                     </div>
@@ -121,11 +121,11 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <a href="../index.php" class="block text-gray-700 hover:text-gray-800 text-sm font-medium">Home</a>
-            <a href="./product.php" class="block mt-2 text-gray-700 hover:text-gray-800 text-sm font-medium">Product</a>
+            <a href="./index.php" class="block text-gray-700 hover:text-gray-800 text-sm font-medium">Home</a>
+            <a href="./Views/product.php" class="block mt-2 text-gray-700 hover:text-gray-800 text-sm font-medium">Product</a>
             <hr class="mt-4">
-            <a href="./login.php" class="block mt-2 text-gray-700 hover:text-gray-800 text-sm font-medium">Sign in</a>
-            <a href="./register.php" class="block mt-2 text-gray-700 hover:text-gray-800 text-sm font-medium">Create account</a>
+            <a href="./Views/login.php" class="block mt-2 text-gray-700 hover:text-gray-800 text-sm font-medium">Sign in</a>
+            <a href="./Views/register.php" class="block mt-2 text-gray-700 hover:text-gray-800 text-sm font-medium">Create account</a>
         </div>
     </div>
 </header>

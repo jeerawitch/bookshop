@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php
     } else {
         $_SESSION["userid"] = $result["UserID"];
-        header("Location:../index.php");
+        header("Location:../../index.php");
     }
 }
 ?>

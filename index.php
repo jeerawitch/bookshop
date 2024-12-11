@@ -17,7 +17,7 @@ require_once __DIR__ . "/Views/component/session.php";
 <body>
 
     <?php
-        include("./Views/component/navbar.php");
+        include("./Views/component/navbar_index.php");
     ?>
 
     <div class="relative overflow-hidden bg-white">
@@ -63,7 +63,7 @@ require_once __DIR__ . "/Views/component/session.php";
                             </div>
                         </div>
 
-                        <a href="./product.php" class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Shop Collection</a>
+                        <a href="./Views/product.php" class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Shop Collection</a>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@ require_once __DIR__ . "/Views/component/session.php";
   </div>
 
     <?php
-        include("./component/footer.php")
+        include("./Views/component/footer.php")
     ?>
 
 </body>

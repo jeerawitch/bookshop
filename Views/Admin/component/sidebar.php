@@ -34,7 +34,7 @@
         <a href="./shippingManagement.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
             <span><img class="w-6" src="../../images/shipping.png" alt="shipping.png"></span> <span class="ml-2">Shipping</span>
         </a>
-        <a href="../index.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
+        <a href="../../index.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
             <span><img class="w-6" src="../../images/signout.png" alt="signout.png"></span> <span class="ml-2">Sign out</span>
         </a>
     </nav>
@@ -62,7 +62,7 @@
         <a href="./shippingManagement.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
             <span><img class="w-6" src="../../images/shipping.png" alt="shipping.png"></span> <span class="ml-2">Shipping</span>
         </a>
-        <a href="../index.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
+        <a href="../../index.php" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded-lg">
             <span><img class="w-6" src="../../images/signout.png" alt="signout.png"></span> <span class="ml-2">Sign out</span>
         </a>
     </nav>
