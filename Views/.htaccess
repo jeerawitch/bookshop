@@ -1,1 +1,4 @@
 DirectoryIndex index.php
+RewriteEngine On
+RewriteRule ^$ /Views/index.php [L]
+
