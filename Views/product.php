@@ -43,7 +43,7 @@ $result = $admin->getProduct();
                                 <p class="mt-1 text-sm text-gray-500"><?= htmlspecialchars($product['Author']) ?></p>
                                 <p class="mt-1 text-sm text-gray-500"><?= htmlspecialchars($product['Publisher']) ?></p>
                             </div>
-                            <p class="text-sm font-medium text-gray-900">$<?= htmlspecialchars($product['Price']) ?></p>
+                            <p class="text-sm font-medium text-gray-900">฿<?= htmlspecialchars($product['Price']) ?></p>
                         </div>
                         <form action="./purchaseOrder.php" method="POST" class="mt-4">
                             <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['BookID']) ?>">
