@@ -81,7 +81,7 @@ require_once __DIR__ . "/Views/component/session.php";
                 <img src="https://media.licdn.com/dms/image/D4E12AQGKq13jy1jk3g/article-cover_image-shrink_600_2000/0/1718276910176?e=2147483647&v=beta&t=qhmZkQz95RTCnsA1-UtN2zxspMPZdR4FvLwp3-ACCj0" alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." class="h-full w-full object-cover object-center">
                 </div>
                 <h3 class="mt-6 text-sm text-gray-500">
-                <a href="./product.php">
+                <a href="./Views/product.php">
                     <span class="absolute inset-0"></span>
                     Technology
                 </a>
@@ -93,7 +93,7 @@ require_once __DIR__ . "/Views/component/session.php";
                 <img src="https://assets.datamation.com/uploads/2024/01/dm_20240102-types-of-data-analytics.png" alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant." class="h-full w-full object-cover object-center">
                 </div>
                 <h3 class="mt-6 text-sm text-gray-500">
-                <a href="./product.php">
+                <a href="./Views/product.php">
                     <span class="absolute inset-0"></span>
                     Technology
                 </a>
@@ -105,7 +105,7 @@ require_once __DIR__ . "/Views/component/session.php";
                 <img src="https://media.npr.org/assets/img/2023/05/24/gettyimages-1358149692-39527b1e42cc64b90835222f8aa203956538fe0e.jpg" alt="Collection of four insulated travel bottles on wooden shelf." class="h-full w-full object-cover object-center">
                 </div>
                 <h3 class="mt-6 text-sm text-gray-500">
-                <a href="./product.php">
+                <a href="./Views/product.php">
                     <span class="absolute inset-0"></span>
                     Technology
                 </a>
